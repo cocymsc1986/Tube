@@ -1,7 +1,7 @@
 {
-  "name": "react-es6-webpack-boilerplate",
-  "version": "4.0.0",
-  "description": "Boilerplate for kick starting a React Project with ES6 (Babel) and Hot reloader using Webpack.",
+  "name": "tube_application",
+  "version": "1.0.0",
+  "description": "Test app",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
@@ -11,20 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/vasanthk/react-es6-webpack-boilerplate.git"
+    "url": "https://github.com/cocymsc1986/Tube.git"
   },
   "keywords": [
-    "react",
-    "es6",
-    "babel",
-    "webpack"
+    "tube"
   ],
-  "author": "Vasanth Krishnamoorthy (http://www.vasanthk.com)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/vasanthk/react-es6-webpack-boilerplate/issues"
-  },
-  "homepage": "https://github.com/vasanthk/react-es6-webpack-boilerplate",
+  "author": "Michael Cockcroft",
+  "license": "",
+  "homepage": "https://github.com/cocymsc1986/Tube",
   "dependencies": {
     "react": "^0.14.5",
     "react-dom": "^0.14.5",
