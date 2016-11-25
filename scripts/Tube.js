@@ -16,8 +16,9 @@ const updateBalance = (amount, passenger) => {
 const chargeOnEntry = (station, passenger) => {
   passenger.tripStart = station;
   const maxCharge = getMaxCost(station);
+  const minCharge = getMinCost(station);
 
-  if (maxCharge > passenger.balance) {
+  if (minCharge > passenger.balance) {
     console.log('Not enough credit.');
     return 'error';
   }
@@ -95,6 +96,7 @@ const calculateOnExit = (station, passenger) => {
     newBalance = passenger.balance + totalRefund;
     passenger.balance = newBalance;
   } else {
+    // never swiped in so take max fare
     totalCharge = maxCharge;
     newBalance = passenger.balance - totalCharge;
   }
@@ -119,6 +121,20 @@ const getMaxCost = (station) => {
   }
 
   return maxPrice;
+}
+
+const getMinCost = (station) => {
+  let minPrice = 0;
+
+  if (station.zone[0] === 'bus') {
+    minPrice = prices.bus.cost;
+  } else if (station.zone[0] === 1) {
+    minPrice = prices.zoneOne.cost;
+  } else {
+    minPrice = prices.outsideZoneOne.cost
+  }
+
+  return minPrice;
 }
 
 export {
